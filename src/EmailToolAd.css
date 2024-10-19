@@ -1,0 +1,32 @@
+@keyframes slide {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  70% {
+    transform: translateX(70vw) translateY(calc(var(--y-offset) * 1px));
+  }
+  85% {
+    transform: translateX(85vw) translateY(calc(var(--y-offset) * -2px)) scale(0.9);
+  }
+  92% {
+    transform: 
+      translateX(92vw)
+      translateY(calc(var(--node-y) * 1px))
+      scale(0.8);
+  }
+  100% {
+    transform: 
+      translateX(calc(100vw + 50px))
+      translateY(calc(var(--final-y) * 1px))
+      scale(0.7);
+  }
+}
+
+.animate-slide {
+  --y-offset: 0;
+  --node-y: 0;
+  --final-y: 0;
+  animation-name: slide;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-iteration-count: infinite;
+}
